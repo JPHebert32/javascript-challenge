@@ -41,6 +41,14 @@
               <div class="panel-heading">Filter Search</div>
               <div class="panel-body">
                 <form>
+                  <!-- Adding Search/Filter dropdown -->
+                  <select name="filter-type" id="filter-type" style="color:grey">
+                    <option value="datetime" selected >Date</option>
+                    <option value="city">City</option>
+                    <option value="state">State</option>
+                    <option value="country">Country</option>
+                    <option value="shape">Shape</option>
+                  </select>
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
