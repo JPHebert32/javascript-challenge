@@ -4,14 +4,18 @@ var tableData = data;
 // Get a reference to the table body
 var tbody = d3.select('tbody');
 
+// Populate Table Function
 function popTable(data) {
+  //Clear Existing Table
   tbody.html('');
+  //Use d3 to update each cell's text with
+  // UFO Sightings values (weekday, date, high, low)
   data.forEach((ufoSighting) => {
-    // Creating table rows for each row of ufroSighting data
+    // Append table header from data
     var row = tbody.append('tr');
-    //Iterating thru each row for key and values
+    //Use `Object.entries` data value
     Object.entries(ufoSighting).forEach(([key,value]) => {
-      // Creating cells for posting table data
+      // Append a cell to the row for each value
       var cell = row.append('td');
       cell.text(value);
 });
@@ -21,7 +25,7 @@ function popTable(data) {
 // Populate the Table
 popTable(tableData);
 
-
+// Filter Table by enter date Function
 function handleClick() {
   let dateValue  = d3.select('#datetime').property('value');
   //Filter Data
